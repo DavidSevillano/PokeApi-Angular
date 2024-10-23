@@ -9,13 +9,17 @@ import { provideHttpClient } from '@angular/common/http';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { BerriesListComponent } from './components/berries-list/berries-list.component';
+import { MovesListComponent } from './components/moves-list/moves-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonListComponent,
     MenuComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    BerriesListComponent,
+    MovesListComponent
   ],
   imports: [
     BrowserModule,
