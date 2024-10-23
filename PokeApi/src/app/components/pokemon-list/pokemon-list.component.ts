@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Pokemon } from '../../models/pokemon.interface';
+import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -6,5 +8,21 @@ import { Component } from '@angular/core';
   styleUrl: './pokemon-list.component.css'
 })
 export class PokemonListComponent {
+  pokemonList: Pokemon[] = [];
+
+  constructor(private pokemonService: PokemonService) {}
+
+  ngOnInit(): void {
+    this.pokemonService.getPokemonList().subscribe(resp => {
+      this.pokemonList = resp.results;
+    });
+  }
+
+  getPokemonId(url: string): number {
+    var id = url.split('/')[5];
+    return parseInt(id);
+  }
+
+
 
 }
