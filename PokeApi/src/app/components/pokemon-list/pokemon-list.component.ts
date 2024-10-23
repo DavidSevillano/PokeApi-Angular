@@ -19,7 +19,7 @@ export class PokemonListComponent {
   }
 
   getPokemonId(url: string): number {
-    var id = url.split('/')[5];
+    var id = url.split('/')[6];
     return parseInt(id);
   }
 
