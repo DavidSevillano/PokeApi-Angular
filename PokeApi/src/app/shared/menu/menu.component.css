@@ -1,9 +1,6 @@
-
-
 .navbar-brand img {
     width: 120px;
 }
-
 
 .nav-link img {
     display: block;
@@ -12,12 +9,6 @@
 
 .navbar-dark .nav-link {
     color: rgb(255, 255, 255);
-}
-
-
-#pagina-actual {
-    border-bottom: 2px solid rgb(255, 255, 255);
-    padding-bottom: 2px;
 }
 
 .navbar {
@@ -34,3 +25,11 @@
     margin-left: 2em;
 }
 
+#pagina-actual {
+    border-bottom: 2px solid rgb(255, 255, 255);
+    padding-bottom: 2px;
+}
+
+#number{
+    margin-right: 3.5em;
+}
