@@ -15,20 +15,22 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3 mb-4 mt-4">
-            @for(item of pokemonList; track item.name) {
-                <a class="text-decoration-none" [href]="getPokemonId(item.url)">
-                    <div class=>
-                        <div class="d-flex justify-content-between align-items-start mb-1 p-2">
-                            <h5 class="text-white mb-0">{{item.name}}</h5>
-                            <span class="text-white mb-0">N.º {{getPokemonId(item.url)}}</span>
+            @for(item of pokemonList; track getPokemonId(item.url)) {
+                <div class="col-md-3 mb-4 mt-4">
+                    <a class="text-decoration-none" [href]="getPokemonId(item.url)">
+                        <div class=>
+                            <div class="d-flex justify-content-between align-items-start mb-1 p-2">
+                                <h5 class="mb-0">{{item.name}}</h5>
+                                <span class="mb-0">N.º {{getPokemonId(item.url)}}</span>
+                            </div>
+                            <div class="card h-70 bg-secondary text-white">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png" class="card-img" alt="${pokemon.name}">
+                            </div>
+                            
                         </div>
-                        
-                    </div>
-                </a>
-            }
-            
-        </div>
+                    </a>
+                </div>
+            } 
     </div>
 </div>
 
