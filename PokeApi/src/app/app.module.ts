@@ -15,6 +15,8 @@ import { MoveDetailComponent } from './components/move-detail/move-detail.compon
 import { MoveItemComponent } from './components/move-item/move-item.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { PokemonItemComponent } from './components/pokemon-item/pokemon-item.component';
+import { BerryItemComponent } from './components/berry-item/berry-item.component';
+import { BerryDetailComponent } from './components/berry-detail/berry-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { PokemonItemComponent } from './components/pokemon-item/pokemon-item.com
     MoveItemComponent,
     PokemonDetailComponent,
     PokemonItemComponent,
+    BerryItemComponent,
+    BerryDetailComponent,
     
   ],
   imports: [
