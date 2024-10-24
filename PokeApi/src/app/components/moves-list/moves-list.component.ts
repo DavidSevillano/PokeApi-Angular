@@ -21,7 +21,7 @@ export class MovesListComponent implements OnInit {
     });
   }
 
-  getmoveId(url: string): number {
+  getMoveId(url: string): number {
     var id = url.split('/')[6];
     return parseInt(id);
   }
