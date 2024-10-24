@@ -1,1 +1,51 @@
-<p>berries-list works!</p>
+<div class="d-flex justify-content-center align-items-center mt-4 mb-4 mx-5">
+    <div class="">
+        <label for="search" class="form-label text-white">Nombre:</label>
+        <input type="text" class="form-control" id="search" placeholder="Buscar...">
+    </div>
+    <div id="Filtro-home">
+        <label for="search" class="form-label text-white">Tipo:</label>
+        <select class="form-select">
+            <option>Todos</option>
+            <option>Curación PS</option>
+            <option>Curación PP</option>
+            <option>Reducción EVs</option>
+            <option>Reducción daño</option>
+            <option> Pokecubos</option>
+            <option>Aumento características</option>
+            <option>Mejora captura</option>
+            <option> Otros </option>
+        </select>
+    </div>
+    <div id="Filtro-home">
+        <label for="search" class="form-label text-white">Ordenar por:</label>
+        <select class="form-select">
+            <option>Número inferior</option>
+            <option>Número superior</option>
+        </select>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr id="titulos">
+                <th scope="col">Id</th>
+                <th scope="col">Baya</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Efecto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of berryList; track item.url) {
+            <tr class="filas">
+                <td> {{ getBerryId(item.url) }}</td>
+                <td> </td>
+                <td class="row text-capitalize">{{ item.name }}</td>
+                <td>''</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <br><br>
+</div>
