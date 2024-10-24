@@ -1,7 +1,7 @@
-
+<a [routerLink]="['/moves', moveId]" >
     <div class="row">
         <div class="col-2 text-capitalize">
-            <a [routerLink]="['/move', move!.id]">{{ move!.name }}</a>
+ {{ move!.name }}
             </div>
         <div class="col-1 text-capitalize">{{ move!.type.name }}</div>
         <div class="col-1 text-capitalize">{{ move!.damage_class.name }}</div>
@@ -10,3 +10,4 @@
         <div class="col-1">{{ move!.pp }}</div>
         <div class="col-5 ">{{ move!.flavor_text_entries[4].flavor_text }}</div>
     </div>
+</a>
