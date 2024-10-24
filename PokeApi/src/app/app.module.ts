@@ -11,6 +11,8 @@ import { MenuComponent } from './shared/menu/menu.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { BerriesListComponent } from './components/berries-list/berries-list.component';
 import { MovesListComponent } from './components/moves-list/moves-list.component';
+import { MoveDetailComponent } from './components/move-detail/move-detail.component';
+import { MoveItemComponent } from './components/move-item/move-item.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 
 @NgModule({
@@ -21,6 +23,8 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
     PageNotFoundComponent,
     BerriesListComponent,
     MovesListComponent,
+    MoveDetailComponent,
+    MoveItemComponent,
     PokemonDetailComponent,
     
   ],
