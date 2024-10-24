@@ -13,6 +13,7 @@ import { BerriesListComponent } from './components/berries-list/berries-list.com
 import { MovesListComponent } from './components/moves-list/moves-list.component';
 import { MoveDetailComponent } from './components/move-detail/move-detail.component';
 import { MoveItemComponent } from './components/move-item/move-item.component';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MoveItemComponent } from './components/move-item/move-item.component';
     MovesListComponent,
     MoveDetailComponent,
     MoveItemComponent,
+    PokemonDetailComponent,
     
   ],
   imports: [
