@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { MovesListComponent } from './components/moves-list/moves-list.component';
 
 const routes: Routes = [
   { path:'pokemon', component: PokemonListComponent },
+  { path:'moves', component: MovesListComponent },
   { path:'', redirectTo: '/pokemon', pathMatch: 'full' },
   { path:'**', component: PageNotFoundComponent}
  
