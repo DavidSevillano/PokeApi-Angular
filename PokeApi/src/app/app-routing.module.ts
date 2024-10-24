@@ -11,11 +11,10 @@ const routes: Routes = [
   { path:'pokemon', component: PokemonListComponent },
   { path:'pokemon/:id', component: PokemonDetailComponent },
   { path:'moves', component: MovesListComponent },
-  { path:'move/:id', component: MoveDetailComponent },
+ // { path:'move/:id', component: MoveDetailComponent },
   { path:'berries', component: BerriesListComponent},
   { path:'', redirectTo: '/pokemon', pathMatch: 'full' },
   { path:'**', component: PageNotFoundComponent}
- 
 ];
 
 @NgModule({

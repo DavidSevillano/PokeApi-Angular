@@ -1,18 +1,5 @@
-<div class="col-md-3 mb-4 mt-4">
-    @for(item of pokemon; track pokemonId) {
-        <a class="text-decoration-none" [href]="pokemonId">
-            <div class=>
-                <div class="d-flex justify-content-between align-items-start mb-1 p-2">
-                    <h5 class="text-white mb-0 text-capitalize">{{item.name}}</h5>
-                    <span class="text-white mb-0">N.º {{pokemonId}}</span>
-                </div>
-                <div class="card h-70 bg-secondary text-white">
-                    <img [src]="item.sprites.front_default" class="card-img" alt="{{item.name}}">
-                </div>
-                <div class="d-flex justify-content-start mt-2">
-                    
-                </div>
-            </div>
-        </a>
-    }
+<div class="row">
+    <div class="col-12">
+        <app-pokemon-item [pokemonId]="getPokemonId(pokemon.url!)"></app-pokemon-item>
+    </div>
 </div>
