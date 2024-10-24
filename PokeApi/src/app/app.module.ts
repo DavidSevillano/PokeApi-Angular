@@ -19,7 +19,8 @@ import { MovesListComponent } from './components/moves-list/moves-list.component
     MenuComponent,
     PageNotFoundComponent,
     BerriesListComponent,
-    MovesListComponent
+    MovesListComponent,
+    
   ],
   imports: [
     BrowserModule,

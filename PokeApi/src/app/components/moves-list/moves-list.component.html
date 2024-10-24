@@ -1,1 +1,30 @@
-<p>moves-list works!</p>
+
+<div class="container mt-4">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr id="titulos">
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Poder</th>
+                <th scope="col">Precision</th>
+                <th scope="col">PP</th>
+                <th scope="col">Efecto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of moveList; track getmoveId(item.url)) {
+
+            <tr class="filas">
+                <td scope="row">{{ item.name.charAt(0).toUpperCase() + item.name.slice(1) }}</td>
+                <td>''</td>
+                <td>''</td>
+                <td>''</td>
+                <td>''</td>
+                <td>''</td>
+                <td>''</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
