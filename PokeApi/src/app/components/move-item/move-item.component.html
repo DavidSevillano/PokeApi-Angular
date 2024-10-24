@@ -1,0 +1,10 @@
+
+    <div class="row">
+        <div class="col-2 text-capitalize">{{ move!.name }}</div>
+        <div class="col-1 text-capitalize">{{ move!.type.name }}</div>
+        <div class="col-1 text-capitalize">{{ move!.damage_class.name }}</div>
+        <div class="col-1">{{ move!.power ? move!.power: '---' }}</div>
+        <div class="col-1">{{ move!.accuracy ? move!.accuracy: '---' }}</div>
+        <div class="col-1">{{ move!.pp }}</div>
+        <div class="col-5 ">{{ move!.flavor_text_entries[4].flavor_text }}</div>
+    </div>
