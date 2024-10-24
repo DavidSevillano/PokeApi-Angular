@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoveDetailResponse } from '../../models/moves-details-interface';
+import { LearnedByPokemon } from '../../models/moves-details-interface';
 import { ActivatedRoute } from '@angular/router';
 import { MoveService } from '../../services/move.service';
 
@@ -11,7 +11,8 @@ import { MoveService } from '../../services/move.service';
 export class MoveDetailComponent implements OnInit {
 
   moveId: string | null = '';
-  move: MoveDetailResponse | undefined;
+  pokemonAprende: LearnedByPokemon[] | undefined
+
 
   constructor(
     private route: ActivatedRoute,
@@ -22,12 +23,13 @@ export class MoveDetailComponent implements OnInit {
     this.moveId = this.route.snapshot.paramMap.get('id');
 
     this.moveService.getOnemove(parseInt(this.moveId!)).subscribe((response) => {
-      this.move = response;
+      this.pokemonAprende = response.learned_by_pokemon;
     })
     }
 
-    getmoveId(url: string): number {
+    getPokemonId(url: string): number {
       var id = url.split('/')[6];
       return parseInt(id);
     }
+
 }

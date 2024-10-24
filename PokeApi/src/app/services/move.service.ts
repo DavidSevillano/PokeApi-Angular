@@ -18,7 +18,7 @@ export class MoveService {
 
   getOnemove(id: number): Observable<MoveDetailResponse> {
     return this.http.get<MoveDetailResponse>(
-      `https://pokeapi.co/api/v2/move/${id}/`
+      `https://pokeapi.co/api/v2/move/${id}`
     );
   }
 }
