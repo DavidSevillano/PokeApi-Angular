@@ -1,0 +1,9 @@
+<a [routerLink]="['/berries', berryId]" >
+    <div class="row">
+        <div class="col-1 text-capitalize">{{ berry?.id }}</div>
+        <div class="col-1 text-capitalize"></div>
+        <div class="col-2 text-capitalize">{{ berry?.name }}</div>
+        <div class="col-8">{{ berryItem!.effect_entries[0].effect }}</div>
+        
+    </div>
+</a>

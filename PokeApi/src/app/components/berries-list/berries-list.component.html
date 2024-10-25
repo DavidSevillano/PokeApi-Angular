@@ -28,24 +28,19 @@
 
 <div class="container mt-4">
     <table class="table table-dark table-striped">
-        <thead>
-            <tr id="titulos">
-                <th scope="col">Id</th>
-                <th scope="col">Baya</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Efecto</th>
-            </tr>
-        </thead>
-        <tbody>
-            @for(item of berryList; track item.url) {
-            <tr class="filas">
-                <td> {{ getBerryId(item.url) }}</td>
-                <td> </td>
-                <td class="row text-capitalize">{{ item.name }}</td>
-                <td>''</td>
-            </tr>
-        }
-        </tbody>
+
+            <div class="row bg-dark">
+                <div class="col-1">Id</div>
+                <div class="col-1">Baya</div>
+                <div class="col-2">Nombre</div>
+                <div class="col-8">Efecto</div>
+            </div>
+            @for(item of berryList; track getBerryId(item.url)) {
+                <app-berry-item-list [berryId]="getBerryId(item.url)">
+                  
+                </app-berry-item-list>
+                }
+
     </table>
     <br><br>
 </div>
