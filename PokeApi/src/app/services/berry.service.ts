@@ -25,4 +25,5 @@ export class BerryService {
     return this.http.get<BerryItemResponse>(`https://pokeapi.co/api/v2/item/${id}/`);
   }
 
+
 }
