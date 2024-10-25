@@ -18,7 +18,7 @@
     <div class="row">
          @for(item of pokemonList; track getPokemonId(item.url)) {
                 <div class="col-md-3 mb-4 mt-4 align-center">
-                    <a class="text-decoration-none" [href]="getPokemonId(item.url)">
+                    <a class="text-decoration-none" [routerLink]="['/pokemon', getPokemonId(item.url)]">
                         <div class="w-100">
                             <div class="d-flex justify-content-between align-items-start mb-1 p-2">
                                 <h5 class="text-white mb-0 text-capitalize">{{item.name}}</h5>

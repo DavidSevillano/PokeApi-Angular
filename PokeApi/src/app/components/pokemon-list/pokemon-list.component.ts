@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Pokemon } from '../../models/pokemon.interface';
 import { PokemonService } from '../../services/pokemon.service';
+import { PokemonDetailResponse } from '../../models/pokemon-detail.interface';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -9,12 +10,18 @@ import { PokemonService } from '../../services/pokemon.service';
 })
 export class PokemonListComponent {
   pokemonList: Pokemon[] = [];
+  @Input() pokemonId: number | undefined;
+  pokemon: PokemonDetailResponse | undefined;
+
 
   constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {
     this.pokemonService.getPokemonList().subscribe(resp => {
       this.pokemonList = resp.results;
+    });
+    this.pokemonService.getOnePokemon(this.pokemonId!).subscribe(resp => {
+      this.pokemon = resp;
     });
   }
 

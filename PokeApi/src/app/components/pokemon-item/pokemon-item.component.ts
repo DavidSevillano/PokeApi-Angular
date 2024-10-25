@@ -3,6 +3,7 @@ import { PokemonDetailResponse } from '../../models/pokemon-detail.interface';
 import { PokemonService } from '../../services/pokemon.service';
 import { PokemonSpeciesResponse } from '../../models/pokemon-species.interface';
 import { PokemonTypesResponse } from '../../models/pokemon-types.interface';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-item',
@@ -10,26 +11,42 @@ import { PokemonTypesResponse } from '../../models/pokemon-types.interface';
   styleUrl: './pokemon-item.component.css'
 })
 export class PokemonItemComponent implements OnInit{
-  @Input() pokemonId: number | undefined;
+  @Input() pokemonId:string | null = '';
   pokemon: PokemonDetailResponse | undefined;
   pokemonSpecies: PokemonSpeciesResponse | undefined;
   pokemonType: PokemonTypesResponse | undefined;
 
-  constructor(private pokemonService: PokemonService) {}
+  constructor(
+    private pokemonService: PokemonService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.pokemonService.getOnePokemon(this.pokemonId!).subscribe(response => {
+    this.pokemonService.getOnePokemon(this.convertToNumber(this.pokemonId!)).subscribe(response => {
       this.pokemon = response;
     });
 
-    this.pokemonService.getPokemonSpecies(this.pokemonId!).subscribe(resp => {
+    this.pokemonService.getPokemonSpecies(this.convertToNumber(this.pokemonId!)).subscribe(resp => {
       this.pokemonSpecies = resp;
     })
 
-    this.pokemonService.getPokemonType(this.pokemonId!).subscribe(response => {
+    this.pokemonService.getPokemonType(this.convertToNumber(this.pokemonId!)).subscribe(response => {
       this.pokemonType = response;
     })
 
+    this.route.paramMap.subscribe(params => {
+      const idUrl = params.get('id');
+      if (idUrl) {
+        this.pokemonId = idUrl;
+        this.loadPokemonDetail(this.convertToNumber(this.pokemonId)); 
+      }
+    });
+  }
+
+  loadPokemonDetail(id: number): void {
+    this.pokemonService.getOnePokemon(id).subscribe((response) => {
+      this.pokemon = response;
+    });
   }
 
 
@@ -39,6 +56,10 @@ export class PokemonItemComponent implements OnInit{
 
   getTypeId(url: string) : number {
     return parseInt(url.split('/')[6]);
+  }
+
+  convertToNumber(pokemonId: string): number {
+    return parseInt(pokemonId, 10);
   }
 
 
