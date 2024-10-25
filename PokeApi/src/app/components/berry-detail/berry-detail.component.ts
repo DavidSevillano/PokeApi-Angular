@@ -26,12 +26,11 @@ export class BerryDetailComponent {
       this.berryList = resp.results;
     });
     
-    
-    if (this.berryId) {
-      this.berryService.getOneBerry(parseInt(this.berryId)).subscribe(response => {
+
+    this.berryService.getOneBerry(parseInt(this.berryId)).subscribe(response => {
         this.berry = response;
-      });
-    }
+    });
+    
   }
 
   getBerryId(url: string): number {
