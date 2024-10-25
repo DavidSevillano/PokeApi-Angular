@@ -21,17 +21,16 @@
             <h1 class="mb-3 text-center text-capitalize text-white">{{berry?.name}} <small> - N.º {{berry?.id}}</small></h1>
             <div class="d-flex align-items-center">
                 <div class="pkm-card col-md-4 me-auto">
-                    <img src="{{berryItem?.sprites?.default}}" alt="{{berry?.name}}" class="pkm-img" style="max-width: 100%;">
+                    <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/'+ berry!.name+'-berry.png'" alt="{{berry?.name}}" class="pkm-img text-white" style="max-width: 100%;">
                 </div>
                 <div class="col-md-8 mx-5">
-                    <p class="text-white">{{berryItem!.flavor_text_entries[0].text}}</p>
                     <div class="pokemon-details p-3">
                         <div class="row">
                             <div class="col-md-6">
-                                <ul class="list-unstyled">
-                                    <li><strong>Tamaño:</strong> {{berry?.size}}</li>
-                                    <li><strong>Dureza:</strong> {{berry?.firmness}}</li>
-                                    <li><strong>Consistencia: </strong> {{berry?.smoothness}}</li>
+                                <ul class="list-unstyled text-white">
+                                    <li><strong>Tamaño:</strong> {{berry!.size}}</li>
+                                    <li><strong>Dureza:</strong> {{berry!.firmness.name}}</li>
+                                    <li><strong>Consistencia: </strong> {{berry!.smoothness}}</li>
                                 </ul>
                             </div>
                         </div>
@@ -47,7 +46,7 @@
                                 </div>
                                 <div class="flavor" style="background-color: #3498db;">
                                     <strong>Seco</strong>
-                                    <span>{{berry!.flavors[1].potency}}</span>
+                                    <span>{{berry!.flavors[0].potency}}</span>
                                 </div>
                                 <div class="flavor" style="background-color: #f1c40f;">
                                     <strong>Dulce</strong>
