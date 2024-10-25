@@ -22,12 +22,11 @@ export class MoveDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // Suscribirse a los cambios en los parámetros de la ruta
     this.route.paramMap.subscribe(params => {
       const idUrl = params.get('id');
       if (idUrl) {
-        this.moveId = idUrl; // Asigna el ID
-        this.loadMoveDetail(this.convertToNumber(this.moveId)); // Carga los detalles
+        this.moveId = idUrl;
+        this.loadMoveDetail(this.convertToNumber(this.moveId));
       }
     });
   }
@@ -45,7 +44,7 @@ export class MoveDetailComponent implements OnInit {
     }
 
     convertToNumber(moveId: string): number {
-      return parseInt(moveId, 10); // Convierte el string a número
+      return parseInt(moveId, 10);
     }
 
 }
