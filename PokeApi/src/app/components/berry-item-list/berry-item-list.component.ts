@@ -30,4 +30,8 @@ export class BerryItemListComponent {
   getBerryId(url: string): number {
     return parseInt(url.split('/')[6]);
   }
+
+
 }
+
+
