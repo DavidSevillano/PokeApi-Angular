@@ -23,7 +23,7 @@ export class BerryItemComponent implements OnInit{
       this.berry = response;
     });
 
-    this.berryService.getBerryItem(this.berryItemId!).subscribe(resp => {
+    this.berryService.getBerryItem(this.berryId!).subscribe(resp => {
       this.berryItem = resp;
     })
 
@@ -37,11 +37,6 @@ export class BerryItemComponent implements OnInit{
   getBerryId(url: string): number {
     return parseInt(url.split('/')[6]);
   }
-
-  getBerryItemId(url: string) : number {
-    return parseInt(url.split('/')[6]);
-  }
-
 
 }
 
