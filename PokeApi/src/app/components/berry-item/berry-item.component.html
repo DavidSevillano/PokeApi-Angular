@@ -21,44 +21,51 @@
             <h1 class="mb-3 text-center text-capitalize text-white">{{berry?.name}} <small> - N.º {{berry?.id}}</small></h1>
             <div class="d-flex align-items-center">
                 <div class="pkm-card col-md-4 me-auto">
-                    <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/'+ berry!.name+'-berry.png'" alt="{{berry?.name}}" class="pkm-img text-white" style="max-width: 100%;">
+                    <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/'+ berry!.name +'-berry.png'" alt="{{berry?.name}}" class="pkm-img text-white" style="max-width: 100%;">
                 </div>
                 <div class="col-md-8 mx-5">
-                    <div class="pokemon-details p-3">
-                        <div class="row">
+                    <div class="row pokemon-details p-3 d-flex">
                             <div class="col-md-6">
-                                <ul class="list-unstyled text-white">
-                                    <li><strong>Tamaño:</strong> {{berry!.size}}</li>
-                                    <li><strong>Dureza:</strong> {{berry!.firmness.name}}</li>
-                                    <li><strong>Consistencia: </strong> {{berry!.smoothness}}</li>
+                                <ul class="list-unstyled text-white d-flex">
+                                    <li class="mx-4"><strong>Tamaño:</strong> {{berry!.size}}</li>
+                                    <li class="mx-5"><strong>Dureza:</strong> {{berry!.firmness.name}}</li>
+                                    <li class="mx-5"><strong>Consistencia: </strong> {{berry!.smoothness}}</li>
                                 </ul>
                             </div>
+                    </div>
+
+                    
+                    <div class="mt-5">
+                        <h5>Efecto</h5>
+                        <div class="row pokemon-details p-3 ">
+                            <!--<p>  {{berryItem!.effect_entries[0].effect}} </p>-->
                         </div>
                     </div>
+
 
                     <div class="row">
                         <div class="col-md-6 mt-5">
                             <h5>Sabor</h5>
-                            <div class="berry-flavor-table">
+                            <div class="berry-flavor-table d-flex">
                                 <div class="flavor" style="background-color: #e74c3c;">
                                     <strong>Picante</strong>
-                                    <span>{{berry!.flavors[0].potency}}</span>
+                                    <span class="d-flex">{{berry!.flavors[0].potency}}</span>
                                 </div>
                                 <div class="flavor" style="background-color: #3498db;">
                                     <strong>Seco</strong>
-                                    <span>{{berry!.flavors[0].potency}}</span>
+                                    <span class="d-flex">{{berry!.flavors[0].potency}}</span>
                                 </div>
                                 <div class="flavor" style="background-color: #f1c40f;">
                                     <strong>Dulce</strong>
-                                    <span>{{berry!.flavors[2].potency}}</span>
+                                    <span class="d-flex">{{berry!.flavors[2].potency}}</span>
                                 </div>
                                 <div class="flavor" style="background-color: #2ecc71;">
                                     <strong>Amargo</strong>
-                                    <span>{{berry!.flavors[3].potency}}</span>
+                                    <span class="d-flex">{{berry!.flavors[3].potency}}</span>
                                 </div>
                                 <div class="flavor" style="background-color: #9b59b6;">
                                     <strong>Ácido</strong>
-                                    <span>{{berry!.flavors[4].potency}}</span>
+                                    <span class="d-flex">{{berry!.flavors[4].potency}}</span>
                                 </div>
                             </div>
                         </div>
