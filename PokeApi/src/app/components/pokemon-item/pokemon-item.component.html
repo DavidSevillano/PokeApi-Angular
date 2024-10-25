@@ -47,12 +47,12 @@
                         <div class="col-md-6 mt-5">
                             <h5 class="mb-3 text-white">Tipo</h5>
                             <span class="{{pokemon!.types[0].type.name}}-box me-2 fs-6 text-uppercase">{{pokemon!.types[0].type.name}} </span>
-                            <!--falta traer los sprites de los tipos en lugar de type-box y debilidades-->
-                            <!--<img src="{{pokemonType?.sprites?.['generation-vii']?.['sun-moon']?.name_icon}}" alt="{{pokemon!.types[0].type.name}}" class="pkm-img" style="max-width: 100%;">-->
                         </div>
                         <div class="col-md-6 mt-5">
                             <h5 class="mb-3 text-white">Debilidades</h5>
-                            <div id="weaknesses"> {{pokemonType?.damage_relations?.double_damage_from}} </div>
+                            <span class="{{pokemonType!.name}}-box me-2 fs-6 text-uppercase">{{pokemonType!.name}} </span>
+
+                            <div id="weaknesses"> {{pokemonType!.name}} </div>
                         </div>
                     </div>
                 </div>
