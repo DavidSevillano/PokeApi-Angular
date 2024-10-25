@@ -1,2 +1,45 @@
+<div class="container pt-4">
+    <div class="row mb-4 d-flex justify-content-between">
+        <div class="col-3 ">
+            <a [routerLink]="['/moves', convertToNumber(moveId!) - 1]" class="card text-black bg-secondary">
+                <div class="card-body">
+                    <h5 class="card-title">Movimiento Anterior</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 ">
 
+        <h2 class="text-capitalize text-white">{{move.name}}</h2>
+        </div>
+        <div class="col-3 ">
+            <a [routerLink]="['/moves', convertToNumber(moveId!) + 1]" class="card text-black bg-secondary">
+                <div class="card-body">
+                    <h5 class="card-title">Movimiento Siguiente</h5>
+                </div>
+            </a>
+        </div>
+    </div>
 
+    <div class="row mb-4 d-flex justify-content-between pt-5">
+        <div class="col-12">
+            <h3 class="text-capitalize text-white">Pokemon que aprenden {{move.name}}</h3>
+        </div>
+    </div>
+    
+
+    <div class="row mb-4">
+@for(item of pokemonAprende ; track item.name) {
+      
+
+<div class="col-md-3 mb-4 mt-4 align-center">
+            <div class="cardContenido">
+                <h5 class="Nombre text-white mb-1 text-capitalize">{{item.name}}</h5>
+            </div>
+            <div class="card w-100 bg-secondary text-white">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{getPokemonId(item.url)}}.png" class="card-img" alt="${pokemon.name}">
+            </div>
+            
+        </div>
+} 
+    </div>
+</div>
