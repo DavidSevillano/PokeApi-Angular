@@ -1,10 +1,9 @@
 <div class="container pt-4">
     <div class="row mb-4 d-flex justify-content-between">
-        <div class="col-3 ">
-            <a [routerLink]="['/moves', convertToNumber(moveId!) - 1]" class="card text-black bg-secondary">
-                <div class="card-body">
-                    <h5 class="card-title">Movimiento Anterior</h5>
-                </div>
+        <div class="col-3 text-start">
+            <a [routerLink]="['/moves', convertToNumber(moveId!) - 1]" class="btn btn-outline-light btn-lg d-flex justify-content-start">
+                <i class="bi bi-arrow-left-circle"></i>
+                <span class="ms-2">Anterior</span>
             </a>
         </div>
         <div class="col-4 ">
@@ -12,10 +11,9 @@
         <h2 class="text-capitalize text-white">{{move.name}}</h2>
         </div>
         <div class="col-3 ">
-            <a [routerLink]="['/moves', convertToNumber(moveId!) + 1]" class="card text-black bg-secondary">
-                <div class="card-body">
-                    <h5 class="card-title">Movimiento Siguiente</h5>
-                </div>
+            <a [routerLink]="['/moves', convertToNumber(moveId!) + 1]" class="btn btn-outline-light btn-lg d-flex  justify-content-end">
+                <span class="me-2">Siguiente</span>
+                <i class="bi bi-arrow-right-circle"></i>
             </a>
         </div>
     </div>
@@ -31,7 +29,7 @@
 @for(item of pokemonAprende ; track item.name) {
       
 
-<div class="col-md-3 mb-4 mt-4 align-center">
+<div class="col-md-3 mb-4 mt-4">
             <div class="cardContenido">
                 <h5 class="Nombre text-white mb-1 text-capitalize">{{item.name}}</h5>
             </div>
