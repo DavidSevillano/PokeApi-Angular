@@ -2,14 +2,14 @@
     <div class="row align-items-center">
         <div class="row justify-content-between align-items-center mb-4">
             <div class="col-md-3 text-start">
-                <a [routerLink]="['/pokemon', convertToNumber(pokemonId!) - 1]" class="btn btn-outline-light btn-lg d-flex align-items-center justify-content-start">
+                <a [routerLink]="['/pokemon', convertToNumber(pokemonId!) - 1]" class="btn btn-outline-light btn-lg d-flex justify-content-start">
                     <i class="bi bi-arrow-left-circle"></i>
                     <span class="ms-2">Pokemon anterior</span>
                 </a>
             </div>
 
             <div class="col-md-3 text-end">
-                <a [routerLink]="['/pokemon', convertToNumber(pokemonId!) + 1]" class="btn btn-outline-light btn-lg d-flex align-items-center justify-content-end">
+                <a [routerLink]="['/pokemon', convertToNumber(pokemonId!) + 1]" class="btn btn-outline-light btn-lg d-flex justify-content-end">
                     <span class="me-2">Pokemon siguiente</span>
                     <i class="bi bi-arrow-right-circle"></i>
                 </a>

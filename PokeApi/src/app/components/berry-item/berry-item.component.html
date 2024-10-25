@@ -17,14 +17,14 @@
             </div>
         </div>
         
-        <div class="col-md-8 mx-auto">
+        <div class="col-md-7 mx-auto">
             <h1 class="mb-3 text-center text-capitalize text-white">{{berry?.name}} <small> - N.º {{berry?.id}}</small></h1>
             <div class="d-flex align-items-center">
-                <div class="pkm-card col-md-4 me-auto">
+                <div class="pkm-card col-md-4 mt-5">
                     <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/'+ berry!.name +'-berry.png'" alt="{{berry?.name}}" class="pkm-img text-white" style="max-width: 100%;">
                 </div>
                 <div class="col-md-8 mx-5">
-                    <div class="row pokemon-details p-3 d-flex">
+                    <div class="row pokemon-details p-3 d-flex mt-5">
                             <div class="col-md-6">
                                 <ul class="list-unstyled text-white d-flex">
                                     <li class="mx-4"><strong>Tamaño:</strong> {{berry!.size}}</li>
@@ -35,7 +35,7 @@
                     </div>
 
                     
-                    <div class="mt-5">
+                    <div class="mt-3">
                         <h5>Efecto</h5>
                         <div class="row pokemon-details p-3 ">
                             <p>  {{berryItem!.effect_entries[0].effect}} </p>
@@ -44,7 +44,7 @@
 
 
                     <div class="row">
-                        <div class="col-md-6 mt-5">
+                        <div class="col-md-6 mt-3">
                             <h5>Sabor</h5>
                             <div class="berry-flavor-table d-flex">
                                 <div class="flavor" style="background-color: #e74c3c;">
