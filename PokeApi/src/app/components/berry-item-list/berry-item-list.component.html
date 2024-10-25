@@ -1,7 +1,7 @@
 <a [routerLink]="['/berries', berryId]" >
     <div class="row">
         <div class="col-1 text-capitalize">{{ berry?.id }}</div>
-        <div class="col-1 text-capitalize"></div>
+        <div class="col-1 text-capitalize">  <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/'+ berry!.name +'-berry.png'" alt="{{berry?.name}}" class="pkm-img text-white" style="max-width: 50px;"> </div>
         <div class="col-2 text-capitalize">{{ berry?.name }}</div>
         <div class="col-8">{{ berryItem!.effect_entries[0].effect }}</div>
     </div>

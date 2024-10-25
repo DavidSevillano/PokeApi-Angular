@@ -14,18 +14,18 @@
 </div>
 
 
-<div class="container-fluid">
+<div class="container-fluid w-75">
     <div class="row">
          @for(item of pokemonList; track getPokemonId(item.url)) {
                 <div class="col-md-3 mb-4 mt-4 align-center">
                     <a class="text-decoration-none" [routerLink]="['/pokemon', getPokemonId(item.url)]">
                         <div class="w-100">
-                            <div class="d-flex justify-content-between align-items-start mb-1 p-2">
+                            <div class="d-flex justify-content-between mb-1 p-2">
                                 <h5 class="text-white mb-0 text-capitalize">{{item.name}}</h5>
-                                <span class="text-white mb-0">N.º {{getPokemonId(item.url)}}</span>
+                                <span class="text-white mb-0 me-5">N.º {{getPokemonId(item.url)}}</span>
                             </div>
                             <div class="card w-100 bg-secondary text-white">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{getPokemonId(item.url)}}.png" class="card-img" alt="${pokemon.name}">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{getPokemonId(item.url)}}.png" class="card-img w-100" alt="${pokemon.name}">
                             </div>
                             
                         </div>
