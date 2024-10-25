@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { PokemonListResponse } from '../models/pokemon.interface';
 import { PokemonDetailResponse } from '../models/pokemon-detail.interface';
 import { PokemonSpeciesResponse } from '../models/pokemon-species.interface';
-import { PokemonTypesResponse } from '../models/pokemon-types.interface';
+import { DamageRelations, DoubleDamageFrom} from '../models/pokemon-types.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,7 @@ export class PokemonService {
     return this.http.get<PokemonSpeciesResponse>(`https://pokeapi.co/api/v2/pokemon-species/${id}/`)
   }
 
-  getPokemonType(id: number) : Observable<PokemonTypesResponse> {
-    return this.http.get<PokemonTypesResponse>(`https://pokeapi.co/api/v2/type/${id}/`)
+  getPokemonType(id: number) : Observable<DoubleDamageFrom> {
+    return this.http.get<DoubleDamageFrom>(`https://pokeapi.co/api/v2/type/${id}/`)
   }
 }

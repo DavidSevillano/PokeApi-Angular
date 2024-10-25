@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PokemonDetailResponse } from '../../models/pokemon-detail.interface';
 import { PokemonService } from '../../services/pokemon.service';
 import { PokemonSpeciesResponse } from '../../models/pokemon-species.interface';
-import { PokemonTypesResponse } from '../../models/pokemon-types.interface';
+import { DamageRelations, DoubleDamageFrom, PokemonTypesResponse } from '../../models/pokemon-types.interface';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -14,7 +14,8 @@ export class PokemonItemComponent implements OnInit{
   @Input() pokemonId:string | null = '';
   pokemon: PokemonDetailResponse | undefined;
   pokemonSpecies: PokemonSpeciesResponse | undefined;
-  pokemonType: PokemonTypesResponse | undefined;
+  pokemonType: DoubleDamageFrom | undefined;
+  
 
   constructor(
     private pokemonService: PokemonService,
@@ -39,6 +40,9 @@ export class PokemonItemComponent implements OnInit{
       if (idUrl) {
         this.pokemonId = idUrl;
         this.loadPokemonDetail(this.convertToNumber(this.pokemonId)); 
+        this.loadPokemonDebilidad(this.convertToNumber(this.pokemonId)); 
+        this.loadPokemonDescripcion(this.convertToNumber(this.pokemonId)); 
+
       }
     });
   }
@@ -46,6 +50,16 @@ export class PokemonItemComponent implements OnInit{
   loadPokemonDetail(id: number): void {
     this.pokemonService.getOnePokemon(id).subscribe((response) => {
       this.pokemon = response;
+    });
+  }
+  loadPokemonDebilidad(id: number): void {
+    this.pokemonService.getPokemonType(id).subscribe((response) => {
+      this.pokemonType = response;
+    });
+  }
+  loadPokemonDescripcion(id: number): void {
+    this.pokemonService.getPokemonSpecies(id).subscribe((response) => {
+      this.pokemonSpecies = response;
     });
   }
 
@@ -61,6 +75,5 @@ export class PokemonItemComponent implements OnInit{
   convertToNumber(pokemonId: string): number {
     return parseInt(pokemonId, 10);
   }
-
 
 }
